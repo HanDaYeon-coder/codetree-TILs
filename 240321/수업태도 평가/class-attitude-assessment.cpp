@@ -13,10 +13,6 @@ vector<pair<int, string>> grades;
  
 int main() {
     cin >> N;
-       
-    // for(int i=0; i<7; i++) {
-    //     students[names[i]] = 0;
-    // }
 
     for(int i=0; i<N; i++) {
         cin>>name>>grade;
@@ -32,7 +28,7 @@ int main() {
     int minGrade = grades[0].first;
 
     int secondMinGrade = 0;
-    string answer="";
+    string answer="Tie";
 
     for(int i=1; i<7; i++) {
         if(minGrade != grades[i].first and secondMinGrade == 0) {
@@ -41,19 +37,13 @@ int main() {
         }
         else if(secondMinGrade != 0) {
             if(secondMinGrade == grades[i].first) {
-                cout<<"Tie"<<"\n";
-            } else {
-                cout<<answer<<"\n";
+                answer = "Tie";
             }
             break;
         }
     }
-
-    if(secondMinGrade == 0) { //다 동점인 경우
-        cout<<"Tie"<<"\n";
-    } else if(answer==""){
-        cout<<grades[6].second<<"\n";
-    }
+    
+    cout<<answer<<"\n";
 
     return 0;
 }
