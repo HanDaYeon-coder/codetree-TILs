@@ -51,8 +51,8 @@ int main() {
 
     if(secondMinGrade == 0) { //다 동점인 경우
         cout<<"Tie"<<"\n";
-    } else {
-        cout<<grade[6].second<<"\n";
+    } else if(answer.size()==0){
+        cout<<grades[6].second<<"\n";
     }
 
     return 0;
