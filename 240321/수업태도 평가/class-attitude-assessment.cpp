@@ -15,7 +15,10 @@ int main() {
     cin >> N;
     
     // 1. 각 학생의 총합 점수 구하기
-    // 2. 
+   
+    for(int i=0; i<7; i++) {
+        students[names[i]] = 0;
+    }
 
     for(int i=0; i<N; i++) {
         cin>>name>>grade;
@@ -29,7 +32,6 @@ int main() {
     sort(grades.begin(), grades.end());
 
     int minGrade = grades[0].first;
-    // cout<<"min : "<<minGrade<<"\n";
 
     int secondMinGrade = 0;
     string answer;
