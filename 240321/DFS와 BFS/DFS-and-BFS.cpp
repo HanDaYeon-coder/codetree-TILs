@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <queue>
+#include <algorithm>
 using namespace std;
 
 int n, m, k;
@@ -48,6 +49,10 @@ int main() {
         cin>>a>>b;
         v[a].push_back(b);
         v[b].push_back(a);
+    }
+
+    for(int i=0; i<n; i++) {
+        sort(v[i].begin(), v[i].end());
     }
 
     for(int i=0; i<1004; i++) {
