@@ -32,7 +32,7 @@ int main() {
     int minGrade = grades[0].first;
 
     int secondMinGrade = 0;
-    string answer;
+    string answer="";
 
     for(int i=1; i<7; i++) {
         if(minGrade != grades[i].first and secondMinGrade == 0) {
@@ -51,7 +51,7 @@ int main() {
 
     if(secondMinGrade == 0) { //다 동점인 경우
         cout<<"Tie"<<"\n";
-    } else if(answer.size()==0){
+    } else if(answer==""){
         cout<<grades[6].second<<"\n";
     }
 
