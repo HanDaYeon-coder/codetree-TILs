@@ -13,12 +13,10 @@ vector<pair<int, string>> grades;
  
 int main() {
     cin >> N;
-    
-    // 1. 각 학생의 총합 점수 구하기
-   
-    for(int i=0; i<7; i++) {
-        students[names[i]] = 0;
-    }
+       
+    // for(int i=0; i<7; i++) {
+    //     students[names[i]] = 0;
+    // }
 
     for(int i=0; i<N; i++) {
         cin>>name>>grade;
@@ -53,6 +51,8 @@ int main() {
 
     if(secondMinGrade == 0) { //다 동점인 경우
         cout<<"Tie"<<"\n";
+    } else {
+        cout<<grade[6].second<<"\n";
     }
 
     return 0;
