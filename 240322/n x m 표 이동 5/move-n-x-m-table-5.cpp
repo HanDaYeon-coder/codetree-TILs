@@ -42,5 +42,9 @@ int main() {
         }
     }
 
+    if(arr[n][m]==1) {
+        cout<<0<<"\n";
+    }
+
     return 0;
 }
