@@ -5,6 +5,9 @@ string s;
 int dx[4] = {0,-1,0,1};
 int dy[4] = {1,0,-1,0};
 
+int rdx[4] = {0,1,0,-1};
+int rdy[4] = {1,0,-1,0};
+
 int main() {
     cin >> s;
 
@@ -18,8 +21,13 @@ int main() {
         } else if (s[i] == 'R') {
             dir -= 1;
         } else {
-            x += dx[dir];
-            y += dy[dir];
+            if(dir >= 0) {
+                x += dx[dir%4];
+                y += dy[dir%4];
+            } else {
+                x += rdx[(-dir)%4];
+                y += rdy[(-dir)%4];
+            }
         }
     }
 
