@@ -18,7 +18,7 @@ int main() {
         for(int j=0; j<=n-3; j++) {
             int num1 = 0;
             for(int k=0; k<3; k++) {
-                for(int l=0; l<4; l++) {
+                for(int l=0; l<3; l++) {
                     if(arr[i+k][j+l] == 1) {
                         num1++;
                     }
