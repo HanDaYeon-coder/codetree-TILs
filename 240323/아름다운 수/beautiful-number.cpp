@@ -10,11 +10,15 @@ void combi() {
     if(b.size() == n) {
         int num = 1;
         bool is_ans = true;
+
         for(int i=0; i<n; i++) {
             if(b[i] == b[i+1]) {
                 num++;
             } else {
-                if(num != b[i]) {
+                if(b[i] == 1) {
+                    num = 1;
+                }
+                else if(num != b[i]) {
                     is_ans = false;
                     break;
                 }
@@ -24,7 +28,7 @@ void combi() {
 
         if(is_ans) {
             ans++;
-        }
+        } 
         return;
     }
 
@@ -36,7 +40,7 @@ void combi() {
 }
 
 int main() {
-    cin>>n; //중복 순열 4ㅠn
+    cin>>n; //중복 순열
 
     combi();
 
