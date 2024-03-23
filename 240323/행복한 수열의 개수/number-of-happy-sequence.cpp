@@ -19,16 +19,16 @@ int main() {
         int num = 1; //연속하는 숫자의 갯수
         int max_num = 0;
 
-        for(int j=0; j<n; j++) {
+        for(int j=0; j<=n; j++) {
             if(prev == arr[i][j]) {
                 num++;
             } else {
-                prev = arr[i][j];
-                num = 1;
                 if(num >= m) {
                     ans++;
                     break;
                 }
+                prev = arr[i][j];
+                num = 1;
             }
         }
         
@@ -38,16 +38,16 @@ int main() {
         int prev = 0;
         int num = 1; //연속하는 숫자의 갯수 
 
-        for(int i=0; i<n; i++) {
+        for(int i=0; i<=n; i++) {
             if(prev == arr[i][j]) {
                 num++;
             } else {
-                prev = arr[i][j];
-                num = 1;
                 if(num >= m) {
                     ans++;
                     break;
                 }
+                prev = arr[i][j];
+                num = 1;
             }
         }
     }
