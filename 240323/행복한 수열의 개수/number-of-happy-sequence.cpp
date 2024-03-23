@@ -14,9 +14,10 @@ int main() {
         }
     }
 
-    for(int i=0; i<n; i++) { //같은 행에서 찾기
+    for(int i=0; i<=n; i++) { //같은 행에서 찾기
         int prev = 0;
-        int num = 1; //연속하는 숫자의 갯수 
+        int num = 1; //연속하는 숫자의 갯수
+        int max_num = 0;
 
         for(int j=0; j<n; j++) {
             if(prev == arr[i][j]) {
@@ -24,15 +25,16 @@ int main() {
             } else {
                 prev = arr[i][j];
                 num = 1;
+                if(num >= m) {
+                    ans++;
+                    break;
+                }
             }
         }
-
-        if(num >= m) {
-            ans++;
-        }
+        
     }
 
-    for(int j=0; j<n; j++) { // 같은 열에서 찾기
+    for(int j=0; j<=n; j++) { // 같은 열에서 찾기
         int prev = 0;
         int num = 1; //연속하는 숫자의 갯수 
 
@@ -42,11 +44,11 @@ int main() {
             } else {
                 prev = arr[i][j];
                 num = 1;
+                if(num >= m) {
+                    ans++;
+                    break;
+                }
             }
-        }
-
-        if(num >= m) {
-            ans++;
         }
     }
 
