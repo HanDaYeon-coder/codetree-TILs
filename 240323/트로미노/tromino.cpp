@@ -23,8 +23,8 @@ int main() {
         }
     }
 
-    for(int i=0; i<=n-2; i++) {
-        for(int j=0; j<=m-2; j++) {
+    for(int i=0; i<=n; i++) {
+        for(int j=0; j<=m; j++) {
             int a = arr[i][j] + arr[i][j+1] + arr[i][j+2];
             int b = arr[i][j] + arr[i+1][j] + arr[i+2][j];
             ans = max(max(ans, a),b);
