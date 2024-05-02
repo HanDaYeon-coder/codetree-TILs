@@ -1,5 +1,4 @@
 #include <iostream>
-#include <algorithm>
 using namespace std;
 
 int n, m;
@@ -24,7 +23,9 @@ void dfs(int x, int y, int dir, int cost){ //dir : 남쪽 = 1, 남서쪽 = 2, �
         return;
     }
     if(x==n-1){
-        ans = min(ans, cost);
+        if(ans > cost){
+            ans = cost;
+        }
     }
 
     for(int i=0; i<3; i++){
