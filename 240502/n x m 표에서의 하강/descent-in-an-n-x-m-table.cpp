@@ -51,6 +51,7 @@ int main() {
     }
 
     for(int i=0; i<m; i++) {
+        init_visited();
         dfs(0,i,-1, arr[0][i]);
     }
 
