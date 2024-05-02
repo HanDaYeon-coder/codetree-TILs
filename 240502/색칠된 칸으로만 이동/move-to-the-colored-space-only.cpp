@@ -1,6 +1,7 @@
 #include <iostream>
 #include <queue>
 #include <math.h>
+#include <algorithm>
 using namespace std;
 
 int n, m;
@@ -13,6 +14,8 @@ int arr2[504][504]; //색칠된 구역 표시 배열
 int visited[504][504];
 int dx[4] = {0,0,1,-1};
 int dy[4] = {1,-1,0,0};
+int max_diff = 0;
+int min_diff = 1000000000;
 
 void init_visited(){
     for(int i=0; i<n; i++) {
@@ -36,9 +39,10 @@ bool bfs(int x, int y, int D){
 
         if(arr2[here.first][here.second]==1){
             cnt++;
-            if(cnt==colored_cnt){
-                return true;
-            }
+        }
+
+        if(cnt==colored_cnt){
+            return true;
         }
 
         for(int i=0; i<4; i++) {
@@ -79,7 +83,20 @@ int main() {
         }
     }
 
-    for(int d=0; d<1000000001; d++){
+    for(int i=0; i<n; i++) {
+        for(int j=0; j<m; j++) {
+            for(int k=0; k<4; k++) {
+                int nx = i+dx[k];
+                int ny = j+dy[k];
+
+                if(nx < 0 or ny < 0 or nx >= n or ny >= m) continue;
+                min_diff = min(min_diff, abs(arr1[nx][ny]-arr1[i][j]));
+                max_diff = max(max_diff, abs(arr1[nx][ny]-arr1[i][j]));
+            }
+        }
+    }
+
+    for(int d=min_diff; d<=max_diff; d++){
         if(bfs(first_color_x,first_color_y,d)){
             cout<<d<<"\n";
             return 0;
