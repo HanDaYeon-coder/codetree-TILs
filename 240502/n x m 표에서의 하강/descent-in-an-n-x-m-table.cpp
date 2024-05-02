@@ -21,6 +21,9 @@ void init_visited(){
 void dfs(int x, int y, int dir, int cost){ //dir : 남쪽 = 1, 남서쪽 = 2, 남동쪽 = 3
     visited[x][y] = 1;
 
+    if(cost > ans){
+        return;
+    }
     if(x==n-1){
         ans = min(ans, cost);
     }
