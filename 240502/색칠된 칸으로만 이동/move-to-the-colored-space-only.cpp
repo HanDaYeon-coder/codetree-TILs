@@ -6,6 +6,7 @@ using namespace std;
 int n, m;
 int colored_cnt;
 int cnt; //색칠된 구역 방문 개수
+int first_color_x, first_color_y;
 
 int arr1[504][504];
 int arr2[504][504]; //색칠된 구역 표시 배열
@@ -71,20 +72,18 @@ int main() {
 
             if(arr2[i][j]==1){
                 colored_cnt++;
+                if(colored_cnt==1){
+                    first_color_x = i;
+                    first_color_y = j;
+                }
             }
         }
     }
 
     for(int d=0; d<1000000001; d++){
-        for(int i=0; i<n; i++) {
-            for(int j=0; j<m; j++) {
-                if(arr2[i][j]==1){
-                    if(bfs(i,j,d)){
-                        cout<<d<<"\n";
-                        return 0;
-                    }
-                }
-            }
+        if(bfs(first_color_x,first_color_y,d)){
+            cout<<d<<"\n";
+            return 0;
         }
     }
 
