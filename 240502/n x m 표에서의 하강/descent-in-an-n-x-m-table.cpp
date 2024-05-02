@@ -5,8 +5,8 @@ using namespace std;
 
 int n, m;
 int ans = 1e9;
-int arr[504][504];
-int visited[504][504]; 
+int arr[500][500];
+int visited[500][500]; 
 int dx[3] = {1,1,1};
 int dy[3] = {0,1,-1};
 
