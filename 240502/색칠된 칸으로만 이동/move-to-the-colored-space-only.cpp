@@ -36,10 +36,9 @@ bool bfs(int x, int y, int D){
 
         if(arr2[here.first][here.second]==1){
             cnt++;
-        }
-
-        if(cnt==colored_cnt){
-            return true;
+            if(cnt==colored_cnt){
+                return true;
+            }
         }
 
         for(int i=0; i<4; i++) {
