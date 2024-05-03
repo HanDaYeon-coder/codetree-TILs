@@ -8,6 +8,9 @@ string arr[24];
 int ans = 0;
 
 void combi(int start, int r){
+    if(ans!=0){
+        return;
+    }
     if(v.size()==r){
         int cnt = 0;
 
